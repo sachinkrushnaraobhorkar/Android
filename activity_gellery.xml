@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".Gellery">
+
+    <TextView
+        android:id="@+id/textView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:layout_marginBottom="100dp"
+        android:width="10000px"
+        android:background="#FA036897"
+        android:text="New Shows"
+        android:textAlignment="center"
+        android:textColor="@color/white"
+        android:textSize="100px"
+
+       app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+
+    <ImageView
+        android:id="@+id/img"
+        android:layout_width="200dp"
+        android:layout_height="200dp"
+        android:layout_below="@id/textView"
+
+        android:layout_marginTop="2dp"
+        android:background="@drawable/mx"
+        tools:ignore="UnknownId" />
+
+    <ImageView
+        android:id="@+id/mx"
+        android:layout_width="200dp"
+        android:layout_height="200dp"
+        android:layout_marginRight="-415dp"
+        android:layout_below="@id/textView"
+        android:layout_toLeftOf="@id/img"
+        android:background="@drawable/mx0"
+        tools:ignore="UnknownId" />
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Watch Now"
+        android:textSize="50px"
+        android:layout_below="@id/img"
+        android:layout_marginTop="20px"
+        android:id="@+id/t2"
+        android:layout_marginLeft="750px"
+        />
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Suscribe"
+        android:textSize="50px"
+        android:layout_below="@id/mx"
+        android:layout_marginTop="20px"
+        android:id="@+id/t3"
+        android:layout_marginLeft="250px"
+
+        />
+    <ImageView
+        android:id="@+id/img3"
+        android:layout_width="200dp"
+        android:layout_height="200dp"
+        android:layout_below="@id/t2"
+
+        android:layout_marginTop="2dp"
+        android:background="@drawable/mx2"
+        tools:ignore="UnknownId" />
+
+    <ImageView
+        android:id="@+id/img4"
+        android:layout_width="200dp"
+        android:layout_height="200dp"
+        android:layout_marginRight="-415dp"
+        android:layout_below="@id/t2"
+        android:layout_toLeftOf="@id/img"
+        android:background="@drawable/mx1"
+        tools:ignore="UnknownId" />
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Watch"
+        android:textSize="50px"
+        android:layout_below="@id/img3"
+        android:layout_marginTop="20px"
+        android:id="@+id/t5"
+        android:layout_marginLeft="250px"
+        />
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Watch"
+        android:textSize="50px"
+        android:layout_below="@id/img3"
+        android:layout_marginTop="20px"
+        android:id="@+id/t6"
+        android:layout_marginLeft="750px"
+
+        />
+
+
+
+</RelativeLayout>

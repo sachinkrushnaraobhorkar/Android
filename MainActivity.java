@@ -1,61 +1,84 @@
-package com.sachin.myfirstapp;
+package com.sachin.mxplayer;
 
-import androidx.annotation.Nullable;
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
+import android.net.Uri;
 import android.os.Bundle;
-import android.speech.tts.TextToSpeech;
+import android.provider.MediaStore;
+import android.view.Menu;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
-import android.widget.EditText;
-import android.widget.Toast;
 
-import java.util.Locale;
-
-public class MainActivity extends AppCompatActivity implements TextToSpeech.OnInitListener{
-
-    EditText e1,e2;
-    Button b1;
-    String s1,s2;
-    TextToSpeech ts = null;
+public class MainActivity extends AppCompatActivity {
+    private Button btn1;
+    private Button btn2;
+    private Button btn3;
     @Override
-    protected void onCreate(@Nullable Bundle savedInstanceState) {
+    protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        e1=findViewById(R.id.edit1);
-        e2=findViewById(R.id.edit2);
-        b1=findViewById(R.id.login);
-        ts= new TextToSpeech(MainActivity.this,this);
-        b1.setOnClickListener(new View.OnClickListener() {
+
+
+
+        btn1 = findViewById(R.id.button1);
+        btn2 = findViewById(R.id.button2);
+        btn3 = findViewById(R.id.button3);
+
+        btn1.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                s1=e1.getText().toString();
-                s2=e2.getText().toString();
-                String t= "Vishal Login";
-                String s3 = t.toString();
-                String t1= "Register here";
-                String s4 = t1.toString();
-                if(s1.contentEquals("Admin") && s2.contentEquals("Admin")){
-                    Toast.makeText(MainActivity.this, "Login", Toast.LENGTH_SHORT).show();
-                    ts.speak(s3,TextToSpeech.QUEUE_ADD,null,null);
-
-                }else{
-                    Toast.makeText(MainActivity.this, "Not login", Toast.LENGTH_SHORT).show();
-                    ts.speak(s4,TextToSpeech.QUEUE_ADD,null,null);
-                }
-
-
-
+                Intent i = new Intent(MainActivity.this, About_Us.class);
+                startActivity(i);
             }
         });
+
+        btn2.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent j = new Intent(MainActivity.this, Music.class);
+                startActivity(j);
+            }
+        });
+
+        btn3.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent k = new Intent(MainActivity.this, Gellery.class);
+                startActivity(k);
+            }
+        });
+
+
+
     }
     @Override
-    public void onInit(int i) {
-        ts.setLanguage(Locale.ENGLISH);
-        ts.setSpeechRate(0.8f);
+    public boolean onCreateOptionsMenu(Menu menu) {
+        getMenuInflater().inflate(R.menu.option,menu);
+        return true;
+
     }
 
+    @Override
+    public boolean onOptionsItemSelected(@NonNull MenuItem item) {
+        switch (item.getItemId()){
+            case R.id.title1:
+                Intent i=new Intent(Intent.ACTION_CALL, Uri.parse("tel:9911680827"));
+                startActivity(i);
+                break;
+            case R.id.title2:
+                Intent j=new Intent(MediaStore.INTENT_ACTION_STILL_IMAGE_CAMERA);
+                startActivity(j);
+                break;
+            case R.id.title3:
+                Intent k=new Intent(Intent.ACTION_VIEW, Uri.parse("http://www.facebook.com"));
+                startActivity(k);
 
-  
+
+        }
+        return true;
     }
+}
